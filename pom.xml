@@ -35,7 +35,7 @@
 				<environment>Sandbox</environment>
 				<workers>1</workers>
 				<workerType>Micro</workerType>
-				<applicationName>worldtimezone-service2010</applicationName>
+				<applicationName>worldtimezone-service</applicationName>
 				<password>Amor2019+</password>
 				<muleVersion>4.4.0</muleVersion>
 				</cloudHubDeployment>
