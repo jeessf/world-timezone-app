@@ -35,7 +35,7 @@
 						<muleVersion>4.4.0</muleVersion>
 						<username>jessclemente6</username>
 						<password>Amor2019+</password>
-						<applicationName>worldtimezone-service</applicationName>
+						<applicationName>worldtimezone-service-jess-clemente</applicationName>
 						<environment>Sandbox</environment>
 						<region>us-east-1</region>
 						<workers>1</workers>
