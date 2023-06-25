@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="world-demo-api-suite.xml" />
+	<munit:test name="world-demo-apiFlow-test" doc:id="7dd89548-2f87-4c1b-b121-ee59230c56a8" >
+		<munit:behavior >
+			<munit:set-event doc:name="Set Input" doc:id="82557ffa-65c1-4804-9fdb-4a6f37cba979" >
+				<munit:payload value="#[readUrl('classpath://worlddemoapiFlowtest\set-event_payload.dwl')]" encoding="UTF-8" />
+				<munit:attributes value="#[readUrl('classpath://worlddemoapiFlowtest\set-event_attributes.dwl')]" />
+			</munit:set-event>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to world-demo-apiFlow" doc:id="ae109c8c-d16f-4c05-8e05-1a7ff8b34384" name="world-demo-apiFlow"/>
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:verify-call doc:name="Verify call" doc:id="492e4f1f-7f4e-4922-98b2-3fa7d0211ec2" processor="http:request" times="#[1]">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="2b85a4c3-2b9f-4cdc-a651-f33745d940e4" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
