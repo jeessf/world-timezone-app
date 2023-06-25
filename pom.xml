@@ -8,10 +8,6 @@
 	<packaging>mule-application</packaging>
 
 	<name>world-demo-api</name>
-	
-	
-	
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -32,6 +28,17 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+				<cloudHubDeployment>
+				<username>jessclemente6</username>
+				<envirioment>Sandbox</envirioment>
+				<workers>1</workers>
+				<workerType>Micro</workerType>
+				<applicationName>worldtimezone-service</applicationName>
+				<password>Amor2019+</password>
+				<muleVersion>4.4.0</muleVersion>
+				</cloudHubDeployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
